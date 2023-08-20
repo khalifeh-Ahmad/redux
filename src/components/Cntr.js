@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { increase, decrease } from "../store/CounterSlice";
-import { login } from "../store/AuthSlice";
+import { login, logout } from "../store/AuthSlice";
 import { useCallback, useEffect } from "react";
 
 const Cntr = () => {
@@ -16,9 +16,9 @@ const Cntr = () => {
     //console.log(status);
 
     if (status) {
-      dis(login());
+      dis(logout());
     } else {
-      dis(login(true));
+      dis(login());
     }
   };
 
